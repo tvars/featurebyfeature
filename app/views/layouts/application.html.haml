@@ -1,0 +1,8 @@
+!!! Strict
+%html{html_attrs('en')}
+  %head
+    %title= @title.nil? ? "" : "#{@title}"
+  %body
+    #header
+    #container
+      = yield
