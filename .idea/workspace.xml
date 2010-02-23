@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager" verified="true">
-    <list default="true" readonly="true" id="2d77979b-6a95-4939-acd6-a4ba322335ac" name="Default" comment="" />
+    <list default="true" readonly="true" id="2d77979b-6a95-4939-acd6-a4ba322335ac" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+    </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="db/development.sqlite3" />
     <ignored path="db/schema.rb" />
@@ -74,7 +76,7 @@
       <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="27" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.7697228">
+            <state line="39" column="32" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.7185501">
               <folding />
             </state>
           </provider>
@@ -490,7 +492,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="27" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.7697228">
+        <state line="39" column="32" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.7185501">
           <folding />
         </state>
       </provider>
