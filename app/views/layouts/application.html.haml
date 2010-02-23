@@ -4,5 +4,6 @@
     %title= @title.nil? ? "" : "#{@title}"
   %body
     #header
+      %h1= @title.nil? ? "" : "#{@title}"
     #container
       = yield
