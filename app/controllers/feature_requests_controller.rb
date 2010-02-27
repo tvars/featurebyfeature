@@ -3,7 +3,8 @@ class FeatureRequestsController < ApplicationController
   before_filter :login_required, :only => [:done]
 
   def index
-    @feature_requests = FeatureRequest.all
+    @backlog_feature_requests = FeatureRequest.all(:conditions => ['status = ?', FeatureRequest::NEW_STATUS], :order => 'votes desc')
+    @done_feature_requests = FeatureRequest.all(:conditions => ['status = ?', FeatureRequest::DONE_STATUS], :order => 'updated_at desc')
     @new_feature_request = FeatureRequest.new
   end
 
