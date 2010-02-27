@@ -1,7 +1,7 @@
 - @title = 'Feature Requests'
 
 - form_for @new_feature_request do |f|
-  = f.text_field :description
+  = f.text_field :description, :size => 100
   = f.submit 'Add Feature Request'
 
 %table
@@ -16,4 +16,3 @@
         %td= feature_request.id
         %td= feature_request.description
         %td= feature_request.status
-

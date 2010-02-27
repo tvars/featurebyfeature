@@ -2,8 +2,9 @@
 %html{html_attrs('en')}
   %head
     %title= @title.nil? ? "" : "#{@title}"
+    = stylesheet_link_tag 'styles.css'
   %body
     #header
       %h1= @title.nil? ? "" : "#{@title}"
-    #container
+    #main
       = yield
