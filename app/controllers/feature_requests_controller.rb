@@ -1,5 +1,7 @@
 class FeatureRequestsController < ApplicationController
 
+  before_filter :login_required, :only => [:done]
+
   def index
     @feature_requests = FeatureRequest.all
     @new_feature_request = FeatureRequest.new
@@ -16,4 +18,10 @@ class FeatureRequestsController < ApplicationController
     render :text => feature_request.votes 
   end
 
+  def done
+    feature_request = FeatureRequest.find(params[:id])
+    feature_request.done
+    redirect_to :action => :index
+  end
+  
 end

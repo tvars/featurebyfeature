@@ -19,4 +19,7 @@
         %td
           %span{:id => "vote#{feature_request.id}"}= feature_request.votes
           = link_to_remote "+1", :url => vote_feature_request_url(feature_request.id), :method => :put, :success => "$('#vote#{feature_request.id}').text(request)"
-        %td= feature_request.status
+        %td
+          %span{:id => "status#{feature_request.id}"}= feature_request.status
+          - if logged_in? and feature_request.status != FeatureRequest::DONE_STATUS
+            = button_to "Done!", {:action => :done, :id => feature_request.id}, {:method => :put}

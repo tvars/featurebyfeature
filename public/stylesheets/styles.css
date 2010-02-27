@@ -37,11 +37,10 @@ th {
   background-color: beige;
 }
 
-form {
+#new_feature_request {
   margin: 10px;
   text-align: center;
 }
-
 
 h1 {
   margin: 0;
@@ -52,4 +51,8 @@ label {
   display: inline-block;
   text-align: right;
   margin-right: 5px;
+}
+
+td form, td form div {
+  display: inline;
 }
