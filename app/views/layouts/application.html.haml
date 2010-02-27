@@ -3,6 +3,7 @@
   %head
     %title= @title.nil? ? "" : "#{@title}"
     = stylesheet_link_tag 'styles.css'
+    = javascript_include_tag :defaults
   %body
     #header
       %h1= @title.nil? ? "" : "#{@title}"
