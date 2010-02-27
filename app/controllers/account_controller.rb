@@ -10,6 +10,8 @@ class AccountController < ApplicationController
       end
       redirect_back_or_default(:controller => 'home', :action => 'index')
       flash[:notice] = "Logged in successfully"
+    else
+      flash[:notice] = "Invalid username and password"
     end
   end
 

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
 }
 
 #main {
@@ -13,7 +14,7 @@ body {
   padding: 5px;
   border-bottom: 8px solid lightgray;
   border-bottom: 4px solid lightgray;
-  background: lightgreen;
+  background: #ccccff;
   text-align: center;
 }
 
@@ -49,10 +50,26 @@ h1 {
 label {
   width: 100px;
   display: inline-block;
-  text-align: right;
   margin-right: 5px;
 }
 
 td form, td form div {
   display: inline;
+}
+
+.feature-request {
+  margin: 5px 0 5px;
+  padding: 5px;
+  border: 1px solid gray;
+  min-height: 40px;
+}
+
+.votes {
+  float: right;
+}
+
+.subtitle {
+  font-style: italic;
+  color: lightgray;
+  font-size: 80%;
 }

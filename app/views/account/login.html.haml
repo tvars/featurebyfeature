@@ -1,8 +1,8 @@
 - @title = 'Login'
 
-- form_tag do
+- form_tag nil, {:id => 'login_form'} do
   %p
-    %label{:for => 'login'} Login
+    %label{:for => 'login'} Username
     = text_field_tag 'login'
 
   %p
