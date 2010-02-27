@@ -4,15 +4,19 @@
   = f.text_field :description, :size => 100
   = f.submit 'Add Feature Request'
 
-%table
+%table{:id => 'feature_requests'}
   %thead
     %tr
       %th ID
       %th Description
+      %th Votes
       %th Status
   %tbody
     - @feature_requests.each do |feature_request|
       %tr
         %td= feature_request.id
         %td= feature_request.description
+        %td
+          %span{:id => "vote#{feature_request.id}"}= feature_request.votes
+          = link_to_remote "+1", :url => vote_feature_request_url(feature_request.id), :method => :put, :success => "$('#vote#{feature_request.id}').text(request)"
         %td= feature_request.status

@@ -10,4 +10,10 @@ class FeatureRequestsController < ApplicationController
     redirect_to :action => :index
   end
 
+  def vote
+    feature_request = FeatureRequest.find(params[:id])
+    feature_request.vote
+    render :text => feature_request.votes 
+  end
+
 end
