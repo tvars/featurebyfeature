@@ -64,6 +64,11 @@ td form, td form div {
   min-height: 40px;
 }
 
+.feature-request a {
+  font-weight: bold;
+  color: darkgreen;
+}
+
 .votes {
   float: right;
 }

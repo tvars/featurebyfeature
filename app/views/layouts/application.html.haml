@@ -2,7 +2,7 @@
 %html{html_attrs('en')}
   %head
     %title= @title.nil? ? "" : "#{@title}"
-    = stylesheet_link_tag 'styles.css', 'redmond/jquery-ui-1.7.2.custom.css'
+    = stylesheet_link_tag 'redmond/jquery-ui-1.7.2.custom.css', 'styles.css'
     = javascript_include_tag :defaults
   %body
     #header

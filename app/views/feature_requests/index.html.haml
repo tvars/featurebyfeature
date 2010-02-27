@@ -24,7 +24,7 @@
             Votes:
             %span{:id => "vote#{feature_request.id}"}
               = feature_request.votes
-            = button_to_remote "+1", :url => vote_feature_request_url(feature_request.id), :method => :put, :success => "$('#vote#{feature_request.id}').text(request)"
+            = link_to_remote "+1", :url => vote_feature_request_url(feature_request.id), :method => :put, :success => "$('#vote#{feature_request.id}').text(request)"
   #done-tab
     .feature-requests
       - @done_feature_requests.each do |feature_request|
