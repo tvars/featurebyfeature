@@ -41,4 +41,11 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :feature_requests, :member => {:vote => :put}
 
+
+  map.home '/', :controller => 'home', :action => 'index'
+
+#  map.account 'account', :controller => 'account', :action => 'index'
+#  map.signup 'account/signup', :controller => 'account', :action => 'signup'
+  map.login 'account/login', :controller => 'account', :action => 'login' 
+  map.logout 'account/logout', :controller => 'account', :action => 'logout' 
 end

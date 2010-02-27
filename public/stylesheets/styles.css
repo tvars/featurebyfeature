@@ -1,12 +1,6 @@
 body {
-  /*text-align: center;*/
   margin: 0;
 }
-
-h1 {
-  margin: 0;
-}
-
 
 #main {
   width: 80%;
@@ -16,13 +10,16 @@ h1 {
 }
 
 #header {
-  margin: 0;
+  padding: 5px;
   border-bottom: 8px solid lightgray;
   border-bottom: 4px solid lightgray;
   background: lightgreen;
   text-align: center;
 }
 
+#header .links {
+  float: right;
+}
 
 table {
   width: 100%;
@@ -43,4 +40,16 @@ th {
 form {
   margin: 10px;
   text-align: center;
+}
+
+
+h1 {
+  margin: 0;
+}
+
+label {
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 5px;
 }
