@@ -9,7 +9,7 @@ class FeatureRequestsController < ApplicationController
   end
 
   def create
-    FeatureRequest.create!(:description => params['feature_request']['description'])
+    FeatureRequest.create!(params['feature_request'])
     redirect_to :action => :index
   end
 

@@ -40,7 +40,6 @@ th {
 
 #new_feature_request {
   margin: 10px;
-  text-align: center;
 }
 
 h1 {
@@ -48,9 +47,10 @@ h1 {
 }
 
 label {
-  width: 100px;
+  width: 170px;
   display: inline-block;
   margin-right: 5px;
+  vertical-align: top;
 }
 
 td form, td form div {
@@ -77,4 +77,12 @@ td form, td form div {
   font-style: italic;
   color: lightgray;
   font-size: 80%;
+}
+
+input[type='text'] {
+  width: 300px;
+}
+
+textarea {
+  width: 304px;
 }
