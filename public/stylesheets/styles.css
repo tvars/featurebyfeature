@@ -39,7 +39,7 @@ th {
 }
 
 #new_feature_request {
-  margin: 10px;
+  /*margin: 10px;*/
 }
 
 h1 {
@@ -80,9 +80,36 @@ td form, td form div {
 }
 
 input[type='text'] {
-  width: 300px;
+  width: 600px;
 }
 
 textarea {
-  width: 304px;
+  width: 604px;
+}
+
+.errorExplanation {
+  font-size: 70%;
+  border: 1px solid red;
+  padding: 0 5px 0 5px;
+  background-color: #ffcccc;
+}
+
+div.fieldWithErrors {
+  display: inline;
+}
+
+div.fieldWithErrors input, div.fieldWithErrors textarea {
+  border-color: red;
+}
+
+#accordion {
+  margin: 10px 0 10px 0;
+}
+
+.form-row {
+  margin: 0  0 5px 0;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding: 1em;
 }

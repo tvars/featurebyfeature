@@ -1,16 +1,26 @@
 - @title = 'Feature Requests'
 
-- form_for @new_feature_request do |f|
-  = f.label :description, 'Description'
-  = f.text_area :description, :size => 100, :rows => 3, :cols => 43
-  %br
-  = f.label :submitted_by_name, 'Your Name'
-  = f.text_field :submitted_by_name, :size => 50
-  %br
-  = f.label :submitted_by_email, 'Your Email Address'
-  = f.text_field :submitted_by_email, :size => 50
-  %br
-  = f.submit 'Add Feature Request'
+
+#accordion
+  %h3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a feature request
+  %div
+    - form_for @new_feature_request do |f|
+      = f.error_messages
+      .form-row
+        = f.label :description, 'Description'
+        = f.text_area :description, :size => 100, :rows => 3, :cols => 43
+      .form-row
+        = f.label :submitted_by_name, 'Your Name'
+        = f.text_field :submitted_by_name, :size => 50
+      .form-row
+        = f.label :submitted_by_email, 'Your Email Address'
+        = f.text_field :submitted_by_email, :size => 50
+        = f.submit 'Submit'
+
+- if @new_feature_request.errors.empty?
+  = javascript_tag '$("#accordion").accordion({ collapsible: true, active: false, autoHeight: false });'
+- else
+  = javascript_tag '$("#accordion").accordion({ collapsible: true, autoHeight: false});'
 
 #tabs
   %ul
@@ -32,6 +42,12 @@
             %span{:id => "vote#{feature_request.id}"}
               = feature_request.votes
             = link_to_remote "+1", :url => vote_feature_request_url(feature_request.id), :method => :put, :success => "$('#vote#{feature_request.id}').text(request)"
+          .subtitle
+            Submitted by
+            = feature_request.submitted_by_name
+            on
+            = feature_request.created_at.to_date.to_formatted_s(:short)
+
   #done-tab
     .feature-requests
       - @done_feature_requests.each do |feature_request|
@@ -41,7 +57,9 @@
             Votes:
             = feature_request.votes
           .subtitle
-            Completed on
+            Submitted by
+            = feature_request.submitted_by_name
+            and completed on
             = feature_request.updated_at.to_date.to_formatted_s(:short)
 
-= javascript_tag '$("#tabs").tabs();'
+= javascript_tag '$("#tabs").tabs()'
