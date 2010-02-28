@@ -8,13 +8,16 @@
       = f.error_messages
       .form-row
         = f.label :description, 'Description'
-        = f.text_area :description, :size => 100, :rows => 3, :cols => 43
+        = f.text_area :description, :size => 100, :rows => 3, :cols => 43, :class => 'labelify', :title => 'As a <user type> I want to <feature> so that <benefit>'
+        %span#counter
+        = javascript_tag "$('#feature_request_description').simplyCountable()"
+
       .form-row
         = f.label :submitted_by_name, 'Your Name'
-        = f.text_field :submitted_by_name, :size => 50
+        = f.text_field :submitted_by_name, :size => 50, :class => 'labelify', :title => 'John Doe'
       .form-row
         = f.label :submitted_by_email, 'Your Email Address'
-        = f.text_field :submitted_by_email, :size => 50
+        = f.text_field :submitted_by_email, :size => 50, :class => 'labelify', :title => 'john@doe.com'
         = f.submit 'Submit'
 
 - if @new_feature_request.errors.empty?
