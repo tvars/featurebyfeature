@@ -10,7 +10,6 @@
         = f.label :description, 'Description'
         = f.text_area :description, :size => 100, :rows => 3, :cols => 43, :class => 'labelify', :title => 'As a <user type> I want to <feature> so that <benefit>'
         %span#counter
-        = javascript_tag "$('#feature_request_description').simplyCountable()"
 
       .form-row
         = f.label :submitted_by_name, 'Your Name'
@@ -25,7 +24,7 @@
 - else
   = javascript_tag '$("#accordion").accordion({ collapsible: true, autoHeight: false});'
 
-#tabs
+.tabs
   %ul
     %li
       %a{:href => '#backlog-tab'}
@@ -64,5 +63,3 @@
             = feature_request.submitted_by_name
             and completed on
             = feature_request.updated_at.to_date.to_formatted_s(:short)
-
-= javascript_tag '$("#tabs").tabs()'
