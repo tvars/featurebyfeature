@@ -9,13 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223095142) do
+ActiveRecord::Schema.define(:version => 20100228004939) do
 
   create_table "feature_requests", :force => true do |t|
-    t.text     "story",                         :null => false
-    t.string   "status",     :default => "new"
+    t.text     "description",                           :null => false
+    t.string   "status",             :default => "new"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "votes",              :default => 1
+    t.string   "submitted_by_name"
+    t.string   "submitted_by_email"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "email"
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token"
+    t.datetime "remember_token_expires_at"
   end
 
 end
